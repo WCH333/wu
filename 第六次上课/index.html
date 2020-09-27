@@ -6,36 +6,41 @@
     <title>Document</title>
     <style>
         #box1{
-            background-color: rgb(9, 60,128);
-            width:48px;
-            height:60px;
+            background-color: rgb(0, 60,128);
+            width: 40px;
+            height:40px;
             position: absolute;
-            left: 100px;
+            left: 400px;
         }
     </style>
 </head>
 <body>
-         #main{
-             background-color: red;
-             width:60px;
-             height:60px;
-         }
-     </style>
-</body>
-<div id="main">
+         <div id="box1" class="boxclass">
 
-</div>
-<br />
-<br />
-<input type="button" id="btn1"  value="移动"> 
+         </div>
+            
+         <br>
+         <br>
+         <br>
+
+         <div>
+            <input type="button" id="btn1"  value="移动"> 
+         </div>
 
   <script>
-      var target=Document.getElementById("btn1");
+      var target=document.getElementById("btn1");
       target.onclick=function(){
-          var box1 = document.getElementById("box1").style.left;
-          box1 = box1.replace("px","")
-          box1 =Number(box1) + 5;
-          document.getElementById("box1").style.left =box1 +"px";
+          var topValue  = document.getElementById("box1").style.top;
+          var leftValue =document.getElementById("box1").style.left;
+
+          topValue = topValue.replace("px","")
+          topValue =Number(topValue ) + 5;
+
+          leftValue = leftValue.replace("px","")
+          leftValue =Number(leftValue ) + 5;
+          document.getElementById("box1").style.top = leftValue + "px"; 
+          document.getElementById("box1").style.left =topValue +  "px";
       }
   </script>
-</html>
+  </body>
+</html>                                             
